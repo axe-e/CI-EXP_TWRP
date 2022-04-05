@@ -1,0 +1,15 @@
+env:
+    CIRRUS_SHELL: bash
+    
+task:
+  name: "TWRP Recovery Build"
+  timeout_in: 120m
+  container:
+      image: ghcr.io/sushrut1101/docker:latest
+      cpu: 8
+      memory: 20G
+
+  BUILD_script:
+      - curl -sL https://raw.githubusercontent.com/axe-e/CI-EXP_TWRP/main/Build.sh | bash
+  UPLOAD_script:
+      - curl -sL https://raw.githubusercontent.com/axe-e/CI-EXP_TWRP/main/Upload.sh | bash
