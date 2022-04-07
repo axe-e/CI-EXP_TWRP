@@ -1,5 +1,5 @@
-repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
-repo sync
+repo init -u https://github.com/SHRP/manifest.git -b v3_11.0
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 git clone https://github.com/OrangeFoxRecovery/device_xiaomi_spes.git -b fox_11.0 device/xiaomi/spes
 
 export ALLOW_MISSING_DEPENDENCIES=true
